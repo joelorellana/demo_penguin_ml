@@ -3,6 +3,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pickle
+import sklearn
 
 st.title("Penguin Classifier")
 st.write("""This app uses 6 inputs to predict the species of penguin using 
