@@ -4,12 +4,18 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pickle
 import sklearn
+from sklearn.metrics import accuracy_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+
 
 st.title("Penguin Classifier: A Machine Learning App")
 st.write("""This app uses 6 inputs to predict the species of penguin using 
          a model built on the Palmer Penguins dataset.
          Use the form below to get started!""")
-
+password_guess = st.text_input("What is the password? Free password: penguin")
+if password_guess != st.secrets["password_penguin"]:
+    st.stop()
 penguin_df = pd.read_csv("penguins.csv")
 rf_pickle = open("penguin-rf-model.pkl", 'rb')
 map_pickle = open("penguin-output.pkl", 'rb')
